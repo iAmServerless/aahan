@@ -10,7 +10,7 @@
         "ref"  : "origin/master",
         "repo" : "git@github.com:ashuanindian/aahanwebsite.git",
         "path" : "/home/ec2-user",
-        "post-deploy" : "cd /home/ec2-user/aahan && yarn install && yarn build && yarn start && pm2 reload ecosystem.config.js --env production"
+        "post-deploy" : "cd /home/ec2-user/aahansharma && yarn install && yarn build && yarn start && pm2 start npm --name \"next\" -- start"
        }
     }
  }
