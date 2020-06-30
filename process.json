@@ -8,7 +8,7 @@
         "user" : "ec2-user",
         "host" : ["13.235.113.38"],
         "ref"  : "origin/master",
-        "repo" : "git@github.com:ashuanindian/aahanwebsite.git",
+        "repo" : "git@github.com:ashuanindian/aahan.git",
         "path" : "/home/ec2-user",
         "post-deploy" : "cd /home/ec2-user/aahansharma && yarn install && yarn build && yarn start && pm2 start npm --name \"next\" -- start"
        }
