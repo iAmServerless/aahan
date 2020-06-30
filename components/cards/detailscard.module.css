@@ -1,0 +1,55 @@
+.buttonStyle {
+    visibility: hidden;
+    width: 200px;
+    padding: 10px;
+    margin-top:50px;
+    border: 1px solid #333;
+    color: #fff;
+    backdrop-filter: brightness(60%);
+}
+
+.cardStyle {
+  width: 420px;
+  height:350px;
+  display: grid;
+  position: relative;
+  align-items: flex-start;
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+.cardStyle:hover > .buttonStyle {
+    visibility: visible;
+}
+
+.imageStyle {
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.videoStyle {
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+@media (max-width: 719px){ 
+    .cardStyle {
+        width: calc(100vw - 25px);
+      }
+    .buttonStyle {
+        visibility: visible;
+        width: 200px;
+        top: 10px;
+        left:0;
+        transform: translate(0, 0);
+    }
+}

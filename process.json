@@ -1,0 +1,16 @@
+{
+    "apps" : [{
+       "name" : "Lighthouse",
+       "script" : "server.js"
+    }],
+    "deploy" : {
+      "production" : {
+        "user" : "ec2-user",
+        "host" : ["13.235.113.38"],
+        "ref"  : "origin/master",
+        "repo" : "git@github.com:ashuanindian/aahanwebsite.git",
+        "path" : "/home/ec2-user",
+        "post-deploy" : "cd /home/ec2-user/aahan && yarn install && yarn build && yarn start && pm2 reload ecosystem.config.js --env production"
+       }
+    }
+ }
