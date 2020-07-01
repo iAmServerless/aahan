@@ -5,7 +5,7 @@ import styles from './home.module.css'
 
 let cardDetails = [
   {
-      images: ["/images/aahan1.jpeg"],
+      images: ["/photos/DSC_3260.png"],
       buttonTitle: 'My Photos',
       path: '/photos',
       objectId: 'DSC_3260.png'
@@ -18,7 +18,7 @@ let cardDetails = [
       objectId: 'DSC_3214.MOV'
   },
   {
-      images: ["/images/aahan3.jpeg"],
+      images: ["/images/aahan1.jpeg"],
       buttonTitle: 'Pre Nursery',
       path: '/prenursery'
   },
