@@ -1,5 +1,5 @@
 .gridContainer {
-    padding: 2rem;
+    padding: 1rem;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(420px, 0fr));
@@ -14,7 +14,7 @@
 
 @media (max-width: 719px){ 
     .gridContainer {
-        padding: 2rem 0;
+        padding: 1rem 0;
         grid-template-columns: repeat(auto-fit, minmax(calc(100vw - 25px), 0fr));
     }
 }

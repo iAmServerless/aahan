@@ -8,6 +8,7 @@ export default function Breadcrumb({list}) {
                 text-align: left;
                 font-size: 1rem;
                 padding: 0;
+                margin: 1rem 0 0 0;
             }
             .itemStyle {
                 display: inline-block;
@@ -15,7 +16,8 @@ export default function Breadcrumb({list}) {
         `}</style>
         <ul className='listStyle'>
         {list.map((item, index) => {
-            return (index != list.length - 1)? <li key={index} className='itemStyle'><Link href={item.path}><a>{item.text}</a></Link> /&nbsp;</li>:<li key={index} className='itemStyle'><Link href={item.path}><a>{item.text}</a></Link></li>
+            return (index != list.length - 1)? <li key={index} className='itemStyle'><Link href={item.path == '/'? '/': '/[id]'} as={item.path}><a>{item.text}</a></Link> /&nbsp;</li>
+            :<li key={index} className='itemStyle'><Link href={item.path == '/'? '/': '/[id]'} as={item.path}><a>{item.text}</a></Link></li>
         })}
     </ul></>
 }

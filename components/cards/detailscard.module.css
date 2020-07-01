@@ -18,6 +18,13 @@
   border-radius: 10px;
 }
 
+.cardStyle:hover {
+    transform: scale(1.2);
+    box-shadow: 0 20px 20px 0 rgba(0,0,0,0.10);
+    transition: 300ms;
+    z-index: 1;
+  }
+
 .cardStyle:hover > .buttonStyle {
     visibility: visible;
 }
