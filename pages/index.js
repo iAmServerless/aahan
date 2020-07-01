@@ -10,9 +10,11 @@ let cardDetails = [
       path: '/photos'
   },
   {
-      images: ["/images/aahan2.jpeg"],
+      videos: ["/videos/DSC_3214.MOV"],
+      type: 'video',
       buttonTitle: 'My Videos',
-      path: '/videos'
+      path: '/videos',
+      objectId: 'DSC_3214.MOV'
   },
   {
       images: ["/images/aahan3.jpeg"],
@@ -36,7 +38,7 @@ function HomePage() {
       <div className={styles.gridContainer}>
           {
               cardDetails.map((data, i) => {
-                  return <DetailsCard key={i} data={data}/>
+                  return <DetailsCard key={i} data={data} objectId={data.objectId}/>
               })
           }
     </div>

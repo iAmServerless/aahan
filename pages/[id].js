@@ -1,4 +1,5 @@
 import Layout from '../components/homelayout.js'
+import { useRouter } from 'next/router'
 import DetailsCard from '../components/cards/detailscard.js';
 import Breadcrumb from '../components/breadcrumbs';
 import Head from 'next/head'
@@ -64,14 +65,18 @@ export async function getStaticProps({params}) {
     let page = params.id || params.name;
     const photosDirectory = path.join(process.cwd(), 'public', page)
     const filenames = fs.readdirSync(photosDirectory)
-  let resData = filenames.filter((filename) => {
-    return filename.match(/.(mp4|mov|webm|jpg|jpeg|png|gif)$/i)
-  }).map((filename) => {
-    return {
-      [filename.match(/.(mp4|mov|webm)$/i)? 'videos': 'images']: [`/${page}/${filename}`],
-      type: filename.match(/.(mp4|mov|webm)$/i)? 'video': 'image'
-    }
-  })
+    let resData = filenames.filter((filename) => {
+      return filename.match(/.(mp4|mov|webm|jpg|jpeg|png|gif)$/i)
+    }).map((filename) => {
+      return {
+        [filename.match(/.(mp4|mov|webm)$/i)? 'videos': 'images']: [`/${page}/${filename}`],
+        type: filename.match(/.(mp4|mov|webm)$/i)? 'video': 'image',
+        filename,
+        time: fs.statSync(photosDirectory + '/' + filename).mtime.getTime()
+      }
+    }).sort(function (a, b) {
+      return a.time - b.time; 
+    })
 
    return {
        props: {
@@ -83,12 +88,23 @@ export async function getStaticProps({params}) {
 
 
 function Photos({photos, breadcrumb}) {
+  const router = useRouter()
+  const { objectId } = router.query;
   return <Layout>
       <Head>
         <title>Photos Page</title>
       </Head>
       <div className={styles.breadcrumb}>
         <Breadcrumb list={breadcrumb}/>
+      </div>
+      <div>
+        {
+          objectId? photos.filter((data, i) => {
+            return data.filename == objectId
+        }).map((data, i) => {
+          return <DetailsCard key={i} data={data} priority/>
+        }): null
+        }
       </div>
       <div className={styles.gridContainer}>
           {
