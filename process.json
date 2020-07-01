@@ -1,7 +1,7 @@
 {
     "apps" : [{
-       "name" : "Lighthouse",
-       "script" : "server.js"
+       "name" : "Aahan website",
+       "script" : "yarn start"
     }],
     "deploy" : {
       "production" : {
@@ -10,7 +10,7 @@
         "ref"  : "origin/master",
         "repo" : "git@github.com:ashuanindian/aahan.git",
         "path" : "/home/ec2-user",
-        "post-deploy" : "cd /home/ec2-user/source && yarn install && yarn build && pm2 reload npm --name 'next' -- start -i max"
+        "post-deploy" : "cd /home/ec2-user/source && yarn install && yarn build && pm2 startOrRestart process.json --env production"
        }
     }
  }
