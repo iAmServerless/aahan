@@ -15,7 +15,7 @@ function DetailsCard({ data, priority, objectId }) {
     let component = <div className={!priority && style.cardStyle}>
       {data.type == 'video'? 
       <video ref={priority && ref} className={priority? style.largeObjectStyle: style.videoStyle} src={data.videos[0]} controls preload='metadata'/>
-      :<img loading="lazy" className={priority? style.largeObjectStyle: style.imageStyle} src={data.images[0]} />}
+      :<img ref={priority && ref} loading="lazy" className={priority? style.largeObjectStyle: style.imageStyle} src={data.images[0]} />}
       {data.buttonTitle && <div className={`button ${style.buttonStyle}`}>{data.buttonTitle}</div>}
     </div>;
     if (!data.path) return component;
