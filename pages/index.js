@@ -7,7 +7,8 @@ let cardDetails = [
   {
       images: ["/images/aahan1.jpeg"],
       buttonTitle: 'My Photos',
-      path: '/photos'
+      path: '/photos',
+      objectId: 'DSC_3260.png'
   },
   {
       videos: ["/videos/DSC_3214.MOV"],
