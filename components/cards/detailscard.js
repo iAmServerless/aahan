@@ -10,7 +10,7 @@ export default function DetailsCard({ data }) {
       {data.buttonTitle && <div className={`button ${style.buttonStyle}`}>{data.buttonTitle}</div>}
     </div>;
     if (!data.path) return component;
-    return <Link href={data.path}>
+    return <Link href={data.path} as={data.path}>
       <a>{component}</a>
     </Link>
   }
