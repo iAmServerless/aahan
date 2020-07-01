@@ -10,6 +10,7 @@ export default function Header() {
                 padding: 4rem 2rem;
                 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                 align-items: center;
+                height: 500px;
             }
             .title {
                 color: #ddd;

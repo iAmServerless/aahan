@@ -72,6 +72,7 @@ export async function getStaticProps({params}) {
         [filename.match(/.(mp4|mov|webm)$/i)? 'videos': 'images']: [`/${page}/${filename}`],
         type: filename.match(/.(mp4|mov|webm)$/i)? 'video': 'image',
         filename,
+        path: `/${page}`,
         time: fs.statSync(photosDirectory + '/' + filename).mtime.getTime()
       }
     }).sort(function (a, b) {
@@ -92,7 +93,7 @@ function Photos({photos, breadcrumb}) {
   const { objectId } = router.query;
   return <Layout>
       <Head>
-        <title>Photos Page</title>
+        <title>Aahan Sharma | 4yrs old studying at scottish high school, gurgaon</title>
       </Head>
       <div className={styles.breadcrumb}>
         <Breadcrumb list={breadcrumb}/>
@@ -109,7 +110,7 @@ function Photos({photos, breadcrumb}) {
       <div className={styles.gridContainer}>
           {
               photos.map((data, i) => {
-                  return <DetailsCard key={i} data={data}/>
+                  return <DetailsCard key={i} data={data} objectId={data.filename}/>
               })
           }
     </div>
