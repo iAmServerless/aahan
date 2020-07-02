@@ -11,8 +11,7 @@ let cardDetails = [
       objectId: 'DSC_3260.png'
   },
   {
-      videos: ["/videos/DSC_3214.MOV"],
-      type: 'video',
+      images: ["/images/aahan2.jpeg"],
       buttonTitle: 'My Videos',
       path: '/videos',
       objectId: 'DSC_3214.MOV'
