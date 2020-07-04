@@ -82,18 +82,32 @@ export async function getStaticProps({params}) {
    return {
        props: {
            photos: resData,
-           breadcrumb: getBreadCrumbs(page)
+           breadcrumb: getBreadCrumbs(page),
+           page
        }
    }
   }
 
 
-function Photos({photos, breadcrumb}) {
+function Photos({photos, breadcrumb, page}) {
   const router = useRouter()
   const { objectId } = router.query;
+  let seoData = objectId? objectId.split('.')[0].replaceAll('_', ' '): '';
   return <Layout>
       <Head>
-        <title>Aahan Sharma | 4yrs old studying at scottish high school, gurgaon</title>
+        <title>{`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`}</title>
+        <meta name="description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`} />
+        <meta property="og:description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
+        <meta property="og:image" content={`/${page}/${objectId}`} />
+        <meta property="og:url" content="https://www.aahansharma.com/" />
+        <meta property="og:site_name" content="Aahan Sharma" /> 
+        <meta name="twitter:title" content={`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`} />
+        <meta name="twitter:description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
+        <meta name="twitter:image" content={`/${page}/${objectId}`} />
+        <link rel="canonical" href="https://www.aahansharma.com/" />
       </Head>
       <div className={styles.breadcrumb}>
         <Breadcrumb list={breadcrumb}/>

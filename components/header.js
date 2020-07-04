@@ -3,7 +3,7 @@ export default function Header() {
         <>
         <style jsx>{`
             .headerStyle {
-                background: url(/images/heroimages/aahan_hero.jpg);
+                background: url(/photos/Aahan_hiding_behind_tree_in_a_park.jpg);
                 background-size: cover;
                 background-position: center;
                 display: grid;
@@ -20,6 +20,8 @@ export default function Header() {
                 backdrop-filter: brightness(60%);
                 padding: 50px;
                 font-size: 3rem;
+                font-weight: 500;
+                -webkit-font-smoothing: antialiased;
             }
             .subTitle {
                 font-size: 1rem;
@@ -32,12 +34,12 @@ export default function Header() {
             }
         `}</style>
         <div className='headerStyle'>
-            <div className='title'>
+            <h1 className='title'>
                 <div>Hello!</div>
                 <div>My Name is</div>
                 <div>Aahan Sharma</div>
                 <div className='subTitle'>I do what I do</div>
-            </div>
+            </h1>
         </div>
         </>
     )
