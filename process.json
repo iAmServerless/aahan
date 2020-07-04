@@ -10,7 +10,7 @@
         "ref"  : "origin/master",
         "repo" : "git@github.com:ashuanindian/aahan.git",
         "path" : "/home/ec2-user",
-        "pre-deploy-local" : "scp -r public ec2-user@13.235.113.38:'/home/ec2-user/current'",
+        "pre-deploy-local" : "rsync -au -P public/ ec2-user@13.235.113.38:'/home/ec2-user/current/public'",
         "post-deploy" : "cd /home/ec2-user/source && yarn install && yarn build && pm2 startOrRestart process.json --env production"
        }
     }
