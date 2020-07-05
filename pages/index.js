@@ -1,7 +1,15 @@
 import Layout from '../components/homelayout.js'
 import DetailsCard from '../components/cards/detailscard.js';
 import Head from 'next/head'
+import Masonry from 'react-masonry-css'
 import styles from './home.module.css'
+
+const breakpointColumnsObj = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
 
 let cardDetails = [
   {
@@ -11,13 +19,13 @@ let cardDetails = [
       objectId: 'Aahan_best_pose.png'
   },
   {
-      images: ["/photos/Aahan_cutest_photo.jpeg"],
+      images: ["/photos/Aahan_Sharma_Ideal_Photo.jpeg"],
       buttonTitle: 'My Videos',
       path: '/videos',
       objectId: 'Titli_Rani_Titli_Rani.webm'
   },
   {
-      images: ["/photos/Aahan_looking_cute_with_his_little_scientist_cap.jpeg"],
+      images: ["/photos/Aahan_sharma_shying_and_smiling.jpeg"],
       buttonTitle: 'Pre Nursery',
       path: '/prenursery'
   },
@@ -48,11 +56,17 @@ function HomePage() {
       <div className={styles.breadcrumb}>
       </div>
       <div className={styles.gridContainer}>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={styles['my-masonry-grid']}
+        columnClassName={styles['my-masonry-grid_column']}
+      >
           {
               cardDetails.map((data, i) => {
                   return <DetailsCard key={i} data={data} objectId={data.objectId}/>
               })
           }
+          </Masonry>
     </div>
     </Layout>
 }

@@ -2,6 +2,8 @@
     visibility: hidden;
     width: 200px;
     padding: 10px;
+    top: 20px;
+    position: absolute;
     margin-top:50px;
     border: 1px solid #333;
     color: #fff;
@@ -9,12 +11,9 @@
 }
 
 .cardStyle {
-  width: 420px;
-  height:350px;
-  display: grid;
   position: relative;
-  align-items: flex-start;
   background-color: #ddd;
+  margin: 0 0 30px 0;
   border-radius: 10px;
 }
 
@@ -34,7 +33,7 @@
 
 @media (hover:hover) {
     .cardStyle:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         box-shadow: 0 20px 20px 0 rgba(0,0,0,0.10);
         transition: 300ms;
         z-index: 1;
@@ -47,30 +46,22 @@
 
 .imageStyle {
     width: 100%;
-    height:100%;
-    position: absolute;
-    top:0;
-    left:0;
     border-radius: 10px;
-    object-fit: cover;
     background-color: #ddd;
 }
 
 .videoStyle {
     width: 100%;
     height:100%;
-    position: absolute;
-    top:0;
-    left:0;
     border-radius: 10px;
     object-fit: cover;
     background-color: #ddd;
 }
 
 @media (max-width: 719px){ 
-    .cardStyle {
-        width: calc(100vw - 25px);
-      }
+    .disableMobile {
+        pointer-events: none;
+    }
     .buttonStyle {
         visibility: visible;
         width: 200px;

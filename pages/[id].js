@@ -1,11 +1,19 @@
 import Layout from '../components/homelayout.js'
 import { useRouter } from 'next/router'
+import Masonry from 'react-masonry-css'
 import DetailsCard from '../components/cards/detailscard.js';
 import Breadcrumb from '../components/breadcrumbs';
 import Head from 'next/head'
 import styles from './home.module.css'
 import fs from 'fs'
 import path from 'path'
+
+const breakpointColumnsObj = {
+  default: 3,
+  1100: 3,
+  700: 2,
+  500: 1
+};
 
 let breadcrumbs = [{
   text: 'Home',
@@ -76,7 +84,7 @@ export async function getStaticProps({params}) {
         time: fs.statSync(photosDirectory + '/' + filename).mtime.getTime()
       }
     }).sort(function (a, b) {
-      return a.time - b.time; 
+      return b.time - a.time; 
     })
 
    return {
@@ -122,11 +130,17 @@ function Photos({photos, breadcrumb, page}) {
         }
       </div>
       <div className={styles.gridContainer}>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className={styles['my-masonry-grid']}
+        columnClassName={styles['my-masonry-grid_column']}
+      >
           {
               photos.map((data, i) => {
                   return <DetailsCard key={i} data={data} objectId={data.filename}/>
               })
           }
+          </Masonry>
     </div>
     </Layout>
 }
