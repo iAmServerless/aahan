@@ -1,11 +1,11 @@
-import {useRef, useEffect} from 'react';
+import {useRef, useEffect, memo} from 'react';
 
 let headerImages = [
     '/photos/Aahan_hiding_behind_tree_in_a_park.jpg',
     '/photos/Aahan_sharma_that_pose.jpeg'
 ]
 
-export default function Header() {
+function Header() {
     let ref = useRef(null);
     let index = 0 ;
     useEffect(() => {
@@ -75,3 +75,5 @@ export default function Header() {
         </>
     )
 }
+
+export default memo(Header)
