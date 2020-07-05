@@ -92,7 +92,7 @@ export async function getStaticProps({params}) {
 function Photos({photos, breadcrumb, page}) {
   const router = useRouter()
   const { objectId } = router.query;
-  let seoData = objectId? objectId.split('.')[0].replaceAll('_', ' '): '';
+  let seoData = objectId? objectId.split('.')[0].replace(/_/g, ' '): '';
   return <Layout>
       <Head>
         <title>{`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`}</title>
