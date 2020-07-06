@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "pm2 deploy process.json production update"
   },
   "dependencies": {
     "next": "9.4.4",
