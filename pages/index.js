@@ -16,13 +16,11 @@ let cardDetails = [
       images: ["/photos/Aahan_best_pose.png"],
       buttonTitle: 'My Photos',
       path: '/photos',
-      objectId: 'Aahan_best_pose.png'
   },
   {
       images: ["/photos/Aahan_Sharma_Ideal_Photo.jpeg"],
       buttonTitle: 'My Videos',
       path: '/videos',
-      objectId: 'Titli_Rani_Titli_Rani.webm'
   },
   {
       images: ["/photos/Aahan_sharma_shying_and_smiling.jpeg"],

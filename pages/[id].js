@@ -2,7 +2,6 @@ import Layout from '../components/homelayout.js'
 import { useRouter } from 'next/router'
 import Masonry from 'react-masonry-css'
 import DetailsCard from '../components/cards/detailscard.js';
-import Breadcrumb from '../components/breadcrumbs';
 import Head from 'next/head'
 import styles from './home.module.css'
 import fs from 'fs'
@@ -14,27 +13,6 @@ const breakpointColumnsObj = {
   700: 2,
   500: 1
 };
-
-let breadcrumbs = [{
-  text: 'Home',
-  path: '/'
-}, {
-  text: 'Pre Nursery',
-  path: '/prenursery'
-}, {
-  text: 'Nursery',
-  path: '/nursery'
-}, {
-  text: 'Photos',
-  path: '/photos'
-}, {
-  text: 'Videos',
-  path: '/videos'
-}]
-
-function getBreadCrumbs(id) {
-  return breadcrumbs.filter(breadcrumb => breadcrumb.path.indexOf(id) == -1)
-}
 
 export function getAllPages() {
   return [
@@ -90,14 +68,13 @@ export async function getStaticProps({params}) {
    return {
        props: {
            photos: resData,
-           breadcrumb: getBreadCrumbs(page),
            page
        }
    }
   }
 
 
-function Photos({photos, breadcrumb, page}) {
+function Photos({photos, page}) {
   const router = useRouter()
   const { objectId } = router.query;
   let seoData = objectId? objectId.split('.')[0].replace(/_/g, ' '): '';
@@ -117,9 +94,6 @@ function Photos({photos, breadcrumb, page}) {
         <meta name="twitter:image" content={`/${page}/${objectId}`} />
         <link rel="canonical" href="https://www.aahansharma.com/" />
       </Head>
-      <div className={styles.breadcrumb}>
-        <Breadcrumb list={breadcrumb}/>
-      </div>
       <div>
         {
           objectId? photos.filter((data, i) => {
