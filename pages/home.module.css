@@ -1,6 +1,7 @@
 .gridContainer {
     padding: 1rem;
     justify-content: center;
+    overflow: hidden;
 }
 
 .breadcrumb {
