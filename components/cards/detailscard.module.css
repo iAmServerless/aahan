@@ -59,9 +59,6 @@
 }
 
 @media (max-width: 719px){ 
-    .disableMobile {
-        pointer-events: none;
-    }
     .buttonStyle {
         visibility: visible;
         width: 200px;

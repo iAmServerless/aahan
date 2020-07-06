@@ -31,7 +31,7 @@ function DetailsCard({ data, priority, objectId }) {
     </div>;
     if (!data.path) return component;
     return <Link href={{pathname: '/[id]', query: { ...(objectId && {objectId}) }}} as={{pathname: data.path, query: { ...(objectId && {objectId}) }}}>
-      <a className={data.type == 'video'? '':style.disableMobile}>{component}</a>
+      <a>{component}</a>
     </Link>
   }
 
