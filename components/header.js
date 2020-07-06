@@ -29,6 +29,7 @@ function Header() {
                 grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                 align-items: center;
                 min-height: 400px;
+                width:100%;
                 transition: background-image 1s ease-in-out;
             }
             .title {
