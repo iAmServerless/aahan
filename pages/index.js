@@ -38,7 +38,7 @@ function HomePage() {
   return <Layout>
       <Head>
         <title>Aahan Sharma check my photos, videos, rhymes | Scottish High, Gurgaon | G D Goenka La Petite</title>
-        <meta name="description" content="My name is Aahan Sharma check my photos, videos, rhymes I learn at school etc. I love to play cricket and football."></meta>
+        <meta name="description" content="My name is Aahan Sharma check my photos, videos, rhymes I learned at school. I love to play cricket and football. I was born on first August 2016 and enjoying the journey to life. I study in nursery D at Scottish High International School, Also I did my pre nersury at G.D Goenka La Petite"></meta>
         <meta name="robots" content="index, follow" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Aahan Sharma check my photos, videos, rhymes | Scottish High, Gurgaon | G D Goenka La Petite" />
