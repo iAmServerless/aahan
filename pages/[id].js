@@ -99,7 +99,7 @@ function Photos({photos, page}) {
           objectId? photos.filter((data, i) => {
             return data.filename == objectId
         }).map((data, i) => {
-          return <DetailsCard key={i} data={data} priority/>
+          return <DetailsCard key={i} data={data} priority objectId={data.filename}/>
         }): null
         }
       </div>
