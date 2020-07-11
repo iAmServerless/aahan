@@ -15,17 +15,7 @@ function DetailsCard({ data, priority, objectId }) {
 
     let component = <div className={priority? '': style.cardStyle}>
       {data.type == 'video'? 
-      (<><video ref={priority && ref} className={priority? style.largeVideoStyle: style.videoStyle} src={`https://www.aahansharma.com${data.videos[0]}`} controls preload='metadata'/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "VideoObject",
-      "name": `${seoData}`,
-      "thumbnailUrl": "https://www.aahansharma.com/photos/Aahan_how_cute.jpeg",
-      "description": `Aahan Sharma playing ${seoData}`,
-      "uploadDate": `${new Date(data.time)}`,
-      "contentUrl": `https://www.aahansharma.com${data.videos[0]}`,
-      "embedUrl": `https://www.aahansharma.com${data.videos[0]}`,
-    }) }}></script></>)
+      (<video ref={priority && ref} className={priority? style.largeVideoStyle: style.videoStyle} src={`https://www.aahansharma.com${data.videos[0]}`} controls preload='metadata'/>)
       :<img ref={priority && ref} loading="lazy" className={priority? style.largeObjectStyle: style.imageStyle} src={`https://www.aahansharma.com${data.images[0]}`}  alt={`${seoData}`}/>}
       {data.buttonTitle && <div className={`button ${style.buttonStyle}`}>{data.buttonTitle}</div>}
     </div>;

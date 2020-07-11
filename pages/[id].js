@@ -2,6 +2,7 @@ import Layout from '../components/homelayout.js'
 import { useRouter } from 'next/router'
 import Masonry from 'react-masonry-css'
 import DetailsCard from '../components/cards/detailscard.js';
+import VideoJSONLD from '../json-ld/video';
 import Head from 'next/head'
 import styles from './home.module.css'
 import fs from 'fs'
@@ -49,8 +50,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
     let page = params.id || params.name;
-    const photosDirectory = path.join(process.cwd(), 'public', page)
-    const filenames = fs.readdirSync(photosDirectory)
+    const resourceDirectory = path.join(process.cwd(), 'public', page)
+    const filenames = fs.readdirSync(resourceDirectory)
     let resData = filenames.filter((filename) => {
       return filename.match(/.(mp4|mov|webm|jpg|jpeg|png|gif)$/i)
     }).map((filename) => {
@@ -59,7 +60,7 @@ export async function getStaticProps({params}) {
         type: filename.match(/.(mp4|mov|webm)$/i)? 'video': 'image',
         filename,
         path: `/${page}`,
-        time: fs.statSync(photosDirectory + '/' + filename).mtime.getTime()
+        time: fs.statSync(resourceDirectory + '/' + filename).mtime.getTime()
       }
     }).sort(function (a, b) {
       return b.time - a.time; 
@@ -67,17 +68,18 @@ export async function getStaticProps({params}) {
 
    return {
        props: {
-           photos: resData,
+           objects: resData,
            page
        }
    }
   }
 
 
-function Photos({photos, page}) {
+function ListPage({objects, page}) {
   const router = useRouter()
   const { objectId } = router.query;
   let seoData = objectId? objectId.split('.')[0].replace(/_/g, ' '): '';
+  console.log('page', page);
   return <Layout>
       <Head>
         <title>{`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`}</title>
@@ -93,10 +95,11 @@ function Photos({photos, page}) {
         <meta name="twitter:description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
         <meta name="twitter:image" content={`/${page}/${objectId}`} />
         <link rel="canonical" href="https://www.aahansharma.com/" />
+        {page=='videos' && <VideoJSONLD objects={objects}/>}
       </Head>
       <div>
         {
-          objectId? photos.filter((data, i) => {
+          objectId? objects.filter((data, i) => {
             return data.filename == objectId
         }).map((data, i) => {
           return <DetailsCard key={i} data={data} priority objectId={data.filename}/>
@@ -110,7 +113,7 @@ function Photos({photos, page}) {
         columnClassName={styles['my-masonry-grid_column']}
       >
           {
-              photos.map((data, i) => {
+              objects.map((data, i) => {
                   return <DetailsCard key={i} data={data} objectId={data.filename}/>
               })
           }
@@ -119,4 +122,4 @@ function Photos({photos, page}) {
     </Layout>
 }
 
-export default Photos
+export default ListPage
