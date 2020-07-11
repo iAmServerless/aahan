@@ -79,7 +79,7 @@ function ListPage({objects, page}) {
   const router = useRouter()
   const { objectId } = router.query;
   let seoData = objectId? objectId.split('.')[0].replace(/_/g, ' '): '';
-  console.log('page', page);
+  let canonical = `https://www.aahansharma.com/${page}` + (objectId? `objectId=${objectId}`: '')
   return <Layout>
       <Head>
         <title>{`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`}</title>
@@ -94,7 +94,7 @@ function ListPage({objects, page}) {
         <meta name="twitter:title" content={`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`} />
         <meta name="twitter:description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
         <meta name="twitter:image" content={`/${page}/${objectId}`} />
-        <link rel="canonical" href="https://www.aahansharma.com/" />
+        <link rel="canonical" href={canonical} />
         {page=='videos' && <VideoJSONLD objects={objects}/>}
       </Head>
       <div>
