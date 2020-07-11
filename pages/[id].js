@@ -79,7 +79,7 @@ function ListPage({objects, page}) {
   const router = useRouter()
   const { objectId } = router.query;
   let seoData = objectId? objectId.split('.')[0].replace(/_/g, ' '): '';
-  let canonical = `https://www.aahansharma.com/${page}` + (objectId? `objectId=${objectId}`: '')
+  let canonical = `https://www.aahansharma.com/${page}` + (objectId? `?objectId=${objectId}`: '')
   return <Layout>
       <Head>
         <title>{`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`}</title>
