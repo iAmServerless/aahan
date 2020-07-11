@@ -133,7 +133,7 @@ let videos = {
 
 export default function({objects = []}) {
     let videoItemList = objects.map((data, i) => {
-        return {...videos[data.filename], position: i}
+        return {...videos[data.filename], position: i+1}
     })
     return (<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(
     {
