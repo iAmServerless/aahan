@@ -129,6 +129,19 @@ let videos = {
         "contentUrl": "https://www.aahansharma.com/videos/Titli_Rani_Titli_Rani.webm",
         "embedUrl": "https://www.aahansharma.com/videos/Titli_Rani_Titli_Rani.webm"
       },
+      'Aahan_Sharma_building_solar_system.mp4': {
+        "@type": "VideoObject",
+        "name": "Aahan Sharma - Building solar system",
+        "url": "https://www.aahansharma.com/videos?objectId=Aahan_Sharma_building_solar_system.mp4",
+        "description": "Building solar system with mama. Sun, mercury, venus, earth, mars, jupiter, sutern, uranus, neptune",
+        "thumbnailUrl": [
+            'https://www.aahansharma.com/photos/Aahan_sharma_that_pose.jpeg'
+        ],
+        "uploadDate": "2020-07-21T08:00:00+08:00",
+        "duration": "PT7M25S",
+        "contentUrl": "https://www.aahansharma.com/videos/Aahan_Sharma_building_solar_system.mp4",
+        "embedUrl": "https://www.aahansharma.com/videos/Aahan_Sharma_building_solar_system.mp4"
+      }
     }
 
 export default function({objects = []}) {
