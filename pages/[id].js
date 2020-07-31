@@ -7,6 +7,7 @@ import Head from 'next/head'
 import styles from './home.module.css'
 import fs from 'fs'
 import path from 'path'
+import Breadcrumb from '../components/breadcrumbs.js';
 
 const breakpointColumnsObj = {
   default: 3,
@@ -19,22 +20,27 @@ export function getAllPages() {
   return [
     {
       params: {
-        id: 'photos',
-      }
-    },
-    {
-      params: {
         id: 'videos',
       }
     },
     {
       params: {
-        id: 'prenursery',
+        id: 'first_year',
       }
     },
     {
       params: {
-        id: 'nursery',
+        id: 'second_year',
+      }
+    },
+    {
+      params: {
+        id: 'third_year',
+      }
+    },
+    {
+      params: {
+        id: 'fourth_year',
       }
     }
   ]
@@ -74,6 +80,26 @@ export async function getStaticProps({params}) {
    }
   }
 
+  let list = [{
+    text: 'Home',
+    path: '/'
+  }, {
+    text: 'Videos',
+    path: '/videos'
+  }, {
+    text: 'First Year',
+    path: '/first_year'
+  }, {
+    text: 'Second Year',
+    path: '/second_year'
+  }, {
+    text: 'Third Year',
+    path: '/third_year'
+  }, {
+    text: 'Fourth Year',
+    path: '/fourth_year'
+  }]
+
 
 function ListPage({objects, page}) {
   const router = useRouter()
@@ -107,6 +133,7 @@ function ListPage({objects, page}) {
         }
       </div>
       <div className={styles.gridContainer}>
+      <Breadcrumb list={list}/>
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className={styles['my-masonry-grid']}

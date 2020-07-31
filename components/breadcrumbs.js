@@ -9,6 +9,7 @@ export default function Breadcrumb({list}) {
                 font-size: 1rem;
                 padding: 0;
                 margin: 1rem 0 0 0;
+                padding: 15px;
             }
             .itemStyle {
                 display: inline-block;

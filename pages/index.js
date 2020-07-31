@@ -13,24 +13,29 @@ const breakpointColumnsObj = {
 
 let cardDetails = [
   {
-      images: ["/photos/Aahan_best_pose.png"],
-      buttonTitle: 'My Photos',
-      path: '/photos',
+    images: ["/fourth_year/Aahan_cutest_photo.jpeg"],
+    buttonTitle: 'My Videos',
+    path: '/videos',
   },
   {
-      images: ["/photos/Aahan_Sharma_Ideal_Photo.jpeg"],
-      buttonTitle: 'My Videos',
-      path: '/videos',
+      images: ["/first_year/aahan_hand.jpg"],
+      buttonTitle: 'First Year',
+      path: '/first_year',
   },
   {
-      images: ["/photos/Aahan_sharma_shying_and_smiling.jpeg"],
-      buttonTitle: 'Pre Nursery',
-      path: '/prenursery'
+      images: ["/second_year/DSC_0191.jpeg"],
+      buttonTitle: 'Second Year',
+      path: '/second_year'
   },
   {
-      images: ["/photos/Aahan_the_real_and_best_smile.jpeg"],
-      buttonTitle: 'Nursery',
-      path: '/nursery'
+      images: ["/third_year/DSC_2864.jpeg"],
+      buttonTitle: 'Third Year',
+      path: '/third_year'
+  },
+  {
+      images: ["/fourth_year/Aahan_Sharma_Ideal_Photo.jpeg"],
+      buttonTitle: 'Fourth Year',
+      path: '/fourth_year'
   }
 ]
 

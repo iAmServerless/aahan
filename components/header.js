@@ -1,8 +1,18 @@
 import {useRef, useEffect, memo} from 'react';
 
 let headerImages = [
-    '/photos/Aahan_hiding_behind_tree_in_a_park.jpg',
-    '/photos/Aahan_sharma_that_pose.jpeg'
+    '/second_year/DSC_2443.jpeg',
+    '/fourth_year/Aahan_sharma_that_pose.jpeg',
+    '/first_year/aahan_mumma_love.jpg',
+    '/first_year/aahan_papa_love.jpg',
+    '/second_year/DSC_0147.jpeg',
+    '/second_year/DSC_0259.jpeg',
+    '/second_year/DSC_0245.jpeg',
+    '/second_year/DSC_1494.jpeg',
+    '/second_year/DSC_1707.jpeg',
+    '/second_year/DSC_2119.jpeg',
+    '/third_year/DSC_2967.jpeg',
+    '/third_year/DSC_2962.jpeg'
 ]
 
 function Header() {
@@ -12,7 +22,7 @@ function Header() {
         let interval = setInterval(() => {
             if(index == headerImages.length) index=0;
             ref.current.style.backgroundImage=`url(${headerImages[index++]})`
-        }, 5000);
+        }, 3000);
         return () => {
             clearInterval(interval);
         }
@@ -21,7 +31,7 @@ function Header() {
         <>
         <style jsx>{`
             .headerStyle {
-                background: url(/photos/Aahan_hiding_behind_tree_in_a_park.jpg);
+                background: url(/fourth_year/Aahan_hiding_behind_tree_in_a_park.jpg);
                 background-size: cover;
                 background-position: center;
                 display: grid;
