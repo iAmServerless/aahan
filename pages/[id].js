@@ -114,12 +114,12 @@ function ListPage({objects, page}) {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`} />
         <meta property="og:description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
-        <meta property="og:image" content={`/${page}/${objectId}`} />
+        <meta property="og:image" content={`/third_year/DSC_2967.jpeg`} />
         <meta property="og:url" content="https://www.aahansharma.com/" />
         <meta property="og:site_name" content="Aahan Sharma" /> 
         <meta name="twitter:title" content={`Aahan Sharma ${page} ${seoData} | Scottish High, Gurgaon | G D Goenka La Petite`} />
         <meta name="twitter:description" content={`My name is Aahan Sharma check my ${page} ${seoData}`} />
-        <meta name="twitter:image" content={`/${page}/${objectId}`} />
+        <meta name="twitter:image" content={`/third_year/DSC_2967.jpeg`} />
         <link rel="canonical" href={canonical} />
         {page=='videos' && <VideoJSONLD objects={objects}/>}
       </Head>

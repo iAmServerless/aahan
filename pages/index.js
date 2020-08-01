@@ -48,12 +48,12 @@ function HomePage() {
         <meta property="og:type" content="article" />
         <meta property="og:title" content="Aahan Sharma check my photos, videos, rhymes | Scottish High, Gurgaon | G D Goenka La Petite" />
         <meta property="og:description" content="My name is Aahan Sharma check my photos, videos, rhymes I learn at school etc. I love to play cricket and football." />
-        <meta property="og:image" content="/photos/DSC_3260.png" />
+        <meta property="og:image" content="/third_year/DSC_2967.jpeg" />
         <meta property="og:url" content="https://www.aahansharma.com/" />
         <meta property="og:site_name" content="Aahan Sharma" /> 
         <meta name="twitter:title" content="Aahan Sharma Personal Website" />
         <meta name="twitter:description" content="My name is Aahan Sharma check my photos, videos, rhymes I learn at school etc. I love to play cricket and football." />
-        <meta name="twitter:image" content="/photos/DSC_3260.png" />
+        <meta name="twitter:image" content="/third_year/DSC_2967.jpeg" />
         <link rel="canonical" href="https://www.aahansharma.com/" />
       </Head>
       <div className={styles.breadcrumb}>
