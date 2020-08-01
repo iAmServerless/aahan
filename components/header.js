@@ -1,4 +1,5 @@
 import {useRef, useEffect, memo} from 'react';
+import Head from 'next/head'
 
 let headerImages = [
     '/second_year/DSC_2443.jpeg',
@@ -29,6 +30,13 @@ function Header() {
     }, [])
     return (
         <>
+        <Head>
+            {
+                headerImages.map((image, i) => {
+                    return <link rel="preload" key={i} href={image} as="image" />
+                })
+            }
+        </Head>
         <style jsx>{`
             .headerStyle {
                 background: url(/fourth_year/Aahan_hiding_behind_tree_in_a_park.jpg);
